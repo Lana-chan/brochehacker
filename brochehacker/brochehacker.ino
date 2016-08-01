@@ -52,7 +52,9 @@ void setup() {
   pinMode(MAX_CS , OUTPUT);
   pinMode(MAX_CLK, OUTPUT);
   
-  delay(600);
+  // delay para inicializacao do MAX
+  // evita problemas ao ligar, tirando necessidade de reset
+  delay(500);
   
   maxInit();
 }
