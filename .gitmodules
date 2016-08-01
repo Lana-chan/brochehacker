@@ -1,9 +1,9 @@
-[submodule "libs/akn-libs"]
-	path = libs/akn-libs
+[submodule "board/libs/akn-libs"]
+	path = board/libs/akn-libs
 	url = git@github.com:aniline/akn-kicad-libs.git
-[submodule "modules/akn_misc.pretty"]
-	path = modules/akn_misc.pretty
+[submodule "board/modules/akn_misc.pretty"]
+	path = board/modules/akn_misc.pretty
 	url = git@github.com:aniline/akn_misc.pretty.git
-[submodule "libs/aleksmk-libs"]
-	path = libs/aleksmk-libs
+[submodule "board/libs/aleksmk-libs"]
+	path = board/libs/aleksmk-libs
 	url = git@github.com:aleksmk/kicad-libs.git
