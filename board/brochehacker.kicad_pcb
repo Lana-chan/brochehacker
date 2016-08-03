@@ -3,7 +3,7 @@
   (general
     (links 30)
     (no_connects 0)
-    (area 144.069999 97.714999 182.955001 139.775001)
+    (area 141.75 97.714999 185.125 139.775001)
     (thickness 1.6)
     (drawings 11)
     (tracks 93)
@@ -51,7 +51,7 @@
     (aux_axis_origin 0 0)
     (visible_elements FFFFFF7F)
     (pcbplotparams
-      (layerselection 0x010f0_80000001)
+      (layerselection 0x01050_80000000)
       (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.100000)
