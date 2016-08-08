@@ -205,8 +205,6 @@ F 3 "" H 6950 2450 50  0000 C CNN
 	1    6950 2450
 	1    0    0    -1  
 $EndComp
-Text GLabel 7600 2600 2    60   Input ~ 0
-VCC
 Text GLabel 3550 2000 0    60   Input ~ 0
 VCC
 Wire Wire Line
@@ -317,4 +315,6 @@ Connection ~ 3700 3700
 Wire Wire Line
 	3700 3050 3700 2000
 Connection ~ 3700 2000
+Text GLabel 7600 2600 2    60   Input ~ 0
+GND
 $EndSCHEMATC
