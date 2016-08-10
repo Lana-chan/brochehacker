@@ -1,4 +1,5 @@
 (fp_lib_table
   (lib (name akn_misc)(type KiCad)(uri "$(KIPRJMOD)/modules/akn_misc.pretty")(options "")(descr ""))
   (lib (name oshw)(type KiCad)(uri "$(KIPRJMOD)/modules/oshw.pretty")(options "")(descr ""))
+  (lib (name safety_pin)(type KiCad)(uri "$(KIPRJMOD)/modules/safety_pin.pretty")(options "")(descr ""))
 )
