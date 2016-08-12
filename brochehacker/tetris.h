@@ -1,10 +1,11 @@
-#include "display.h"
-
+#pragma once
 #ifndef TETRIS_H_   /* Include guard */
 #define TETRIS_H_
 
-byte board[8] = {0,0,0,0,0,0,0,0};
-byte sprite[8] = {0,0,0,0,0,0,0,0};
+#include "display.h"
+
+static byte board[8] = {0,0,0,0,0,0,0,0};
+static byte sprite[8] = {0,0,0,0,0,0,0,0};
 
 const byte blocks[] = {
   0b01000100, // |

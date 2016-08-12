@@ -37,7 +37,7 @@ void off(byte row, byte column) {
 
 // main loop
 void loop() {
-  if(state == ST_HACKER) runHacker();
+  if(state == ST_GLIDER) runGlider();
   else if(state == ST_TETRIS) runTetris();
   delay(DELAY);
 }

@@ -6,7 +6,7 @@ byte translatePin(byte original) {
 
 // copy animation frame to screen
 void drawFrame(int address) {
-  memcpy(&screen, address, 8);
+  memcpy(&screen, (void*)address, 8);
 }
 
 // returns which buttons are being pressed

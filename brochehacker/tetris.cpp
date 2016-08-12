@@ -7,10 +7,12 @@ void blitScreen() {
 
 void blitSprite(byte block, byte orientation, byte x, byte y) {
   for(byte i = 0; i < 4; i++) {
-    sprite[i+y]   = (blocks[block*4 + orientation]     & 0b11110000)>>x;
-    sprite[i+y+1] = (blocks[block*4 + orientation]     & 0b00001111)>>x;
-    sprite[i+y+2] = (blocks[block*4 + orientation + 1] & 0b11110000)>>x;
-    sprite[i+y+3] = (blocks[block*4 + orientation + 1] & 0b00001111)>>x;
+    byte offset = block*8 + orientation*2;
+    byte row = i+y;
+    sprite[row]   = (blocks[offset]     & 0b11110000)>>x;
+    sprite[row+1] = (blocks[offset]     & 0b00001111)>>x;
+    sprite[row+2] = (blocks[offset + 1] & 0b11110000)>>x;
+    sprite[row+3] = (blocks[offset + 1] & 0b00001111)>>x;
   }
 }
 

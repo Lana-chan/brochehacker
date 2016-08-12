@@ -1,11 +1,13 @@
+#pragma once
+
+#ifndef GLIDER_H_   /* Include guard */
+#define GLIDER_H_
+
 /*
  * glider animation
  */
 
 #include "display.h"
-
-#ifndef GLIDER_H_   /* Include guard */
-#define GLIDER_H_
 
 const byte FRAMES = 4;
 const byte anim[] = {
@@ -46,6 +48,6 @@ const byte anim[] = {
   B00000000
 };
 
-void runHacker();
+void runGlider();
 
 #endif // GLIDER_H_
