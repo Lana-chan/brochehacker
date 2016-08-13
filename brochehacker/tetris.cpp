@@ -1,25 +1,30 @@
 #include "tetris.h"
 
+static byte board[8] = {0,0,0,0,0,0,0,0};
+static byte sprite[8] = {0,0,0,0,0,0,0,0};  
+
+// outputs both board and sprite muxed into screen
 void blitScreen() {
   for(byte i = 0; i < 8; i++)
     screen[i] = board[i] | sprite[i];
 }
 
+// makes sprite be a single block at x and y
 void blitSprite(byte block, byte orientation, byte x, byte y) {
-  for(byte i = 0; i < 4; i++) {
-    byte offset = block*8 + orientation*2;
-    byte row = i+y;
-    sprite[row]   = (blocks[offset]     & 0b11110000)>>x;
-    sprite[row+1] = (blocks[offset]     & 0b00001111)>>x;
-    sprite[row+2] = (blocks[offset + 1] & 0b11110000)>>x;
-    sprite[row+3] = (blocks[offset + 1] & 0b00001111)>>x;
-  }
+  memset(sprite,0,8);
+  byte offset = block*8 + orientation*2;
+  sprite[y]   = (blocks[offset]        & 0b11110000)>>x;
+  sprite[y+1] = (blocks[offset]<<4     & 0b11110000)>>x;
+  sprite[y+2] = (blocks[offset + 1]    & 0b11110000)>>x;
+  sprite[y+3] = (blocks[offset + 1]<<4 & 0b11110000)>>x;
 }
 
+// initializes tetris variables
 void startTetris() {
-  state = 1;
+  state = ST_TETRIS;
 }
 
+// loop function for tetris
 void runTetris() {
   static byte block;
   static byte orientation;

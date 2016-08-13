@@ -1,5 +1,10 @@
 #include "display.h"
 
+byte state = ST_TETRIS;
+byte screen[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+byte screenRow = 0;
+byte screenCol = 0;
+
 byte translatePin(byte original) {
   return pins[original - 1];
 }

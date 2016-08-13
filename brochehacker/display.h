@@ -13,7 +13,7 @@
 const byte DELAY = 10;
 const byte ST_GLIDER = 0;
 const byte ST_TETRIS = 1;
-static byte state = ST_GLIDER;
+extern byte state;
 
 const byte button[4] = {4, 12, 11, 13};
 const byte BUTTON_1 = 0b0001;
@@ -28,9 +28,9 @@ const byte HELD_4 = 0b10000000;
 const byte rows[8] = {9, 14, 8, 12, 1, 7, 2, 5};
 const byte cols[8] = {13, 3, 4, 10, 6, 11, 15, 16};
 const byte pins[16] = {0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19};
-static byte screen[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-static byte screenRow = 0;
-static byte screenCol = 0;
+extern byte screen[8];
+extern byte screenRow;
+extern byte screenCol;
 
 byte translatePin(byte original);
 void drawFrame(byte frame);
