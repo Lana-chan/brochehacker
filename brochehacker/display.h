@@ -29,8 +29,6 @@ const byte rows[8] = {9, 14, 8, 12, 1, 7, 2, 5};
 const byte cols[8] = {13, 3, 4, 10, 6, 11, 15, 16};
 const byte pins[16] = {0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19};
 extern byte screen[8];
-extern byte screenRow;
-extern byte screenCol;
 
 byte translatePin(byte original);
 void drawFrame(byte frame);

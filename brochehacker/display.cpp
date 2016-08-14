@@ -2,8 +2,6 @@
 
 byte state = ST_TETRIS;
 byte screen[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-byte screenRow = 0;
-byte screenCol = 0;
 
 byte translatePin(byte original) {
   return pins[original - 1];
@@ -31,6 +29,8 @@ byte buttonState() {
 
 // interrupt routine
 void doubleBuffer() {
+  static byte screenRow = 0;
+  static byte screenCol = 0;
   // reset the previous iteration
   digitalWrite(translatePin(rows[screenRow]), HIGH); // set previous off
   digitalWrite(translatePin(cols[screenCol]), LOW);  // set previous off

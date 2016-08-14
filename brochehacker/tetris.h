@@ -9,10 +9,10 @@ const byte blocks[] = {
   0b01000100,
   0b00001111, // _
   0b00000000,
-  0b01000100, // |
-  0b01000100,
-  0b00001111, // _
-  0b00000000,
+  0b00100010, // |
+  0b00100010,
+  0b00000000, // _
+  0b11110000,
 
   0b01001110, // T
   0b00000000,
@@ -52,25 +52,27 @@ const byte blocks[] = {
 
   0b01000110, // S
   0b00100000,
-  0b01101100,
-  0b00000000,
-  0b01000110,
-  0b00100000,
+  0b00000110,
+  0b11000000,
+  0b10001100,
+  0b01000000,
   0b01101100,
   0b00000000,
 
   0b00100110, // Z
   0b01000000,
-  0b11000110,
-  0b00000000,
-  0b00100110,
-  0b01000000,
+  0b00001100,
+  0b01100000,
+  0b01001100,
+  0b10000000,
   0b11000110,
   0b00000000
 };
 
+boolean checkCollision();
+boolean checkCollision(char offset);
 void blitScreen();
-void blitSprite(byte block, byte orientation, byte x, byte y);
+void blitSprite();
 void startTetris();
 void runTetris();
 
