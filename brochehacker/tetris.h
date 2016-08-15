@@ -69,6 +69,26 @@ const byte blocks[] = {
   0b00000000
 };
 
+const char minX[] = {
+  -1,  0, -2,  0, // I
+   0, -1,  0,  0, // T
+  -1, -1, -1, -1, // []
+   0,  0, -1,  0, // L
+  -1,  0,  0,  0, // J
+  -1,  0,  0,  0, // S
+  -1,  0,  0,  0  // Z
+};
+
+const char maxX[] = {
+  6, 4, 5, 4, // I
+  5, 5, 5, 6, // T
+  5, 5, 5, 5, // []
+  6, 5, 5, 5, // L
+  5, 5, 6, 5, // J
+  5, 5, 6, 5, // S
+  5, 5, 6, 5  // Z
+};
+
 boolean checkSidewaysCollision();
 boolean checkSidewaysCollision(char offset);
 boolean checkBottomCollision();

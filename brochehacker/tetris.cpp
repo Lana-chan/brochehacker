@@ -11,8 +11,8 @@ boolean initTetris = true;
 byte cycle;
 byte block;
 byte orientation;
-char x; // char for signedness
-char y;
+char x = MIDDLE; // char for signedness
+char y = 5;
 
 // outputs both board and sprite muxed into screen
 void blitScreen() {
@@ -42,16 +42,14 @@ void blitSprite() {
 
 //checks if piece can go left (false if collides)
 boolean checkLeft() {
-  for(byte i = 0; i < 4; i++)
-    if(sprite[i+y] & 0b10000000) return false;
+  if(x <= minX[block*4+orientation]) return false;
   if(checkSidewaysCollision(-1)) return false;
   return true;
 }
 
 //checks if piece can go right (false if collides)
 boolean checkRight() {
-  for(byte i = 0; i < 4; i++)
-    if(sprite[i+y] & 0b00000001) return false;
+  if(x >= maxX[block*4+orientation]) return false;
   if(checkSidewaysCollision(1)) return false;
   return true;
 }
@@ -87,12 +85,17 @@ boolean checkBottomCollision() {
 // check if block can rotate (false if collides)
 boolean checkRotation() {
   byte oldOrientation = orientation;
+  char oldX = x;
   orientation++;
   if(orientation >= 4) orientation = 0;
+  byte offset = block*4+orientation;
+  if(x < minX[offset]) x = minX[offset];
+  else if(x > maxX[offset]) x = maxX[offset];
   blitSprite();
   boolean result = checkSidewaysCollision();
   // TODO: check if out of bounds (how??)
   orientation = oldOrientation;
+  x = oldX;
   blitSprite();
   return !result;
 }
@@ -139,6 +142,7 @@ void newBlock() {
 void runTetris() {
   // init variables - new game
   if(initTetris) {
+    randomSeed(millis());
     initTetris = false;
     cycle = 0;
     clearBoard();
@@ -160,6 +164,9 @@ void runTetris() {
     if(checkRotation()) {
       orientation++;
       if(orientation >= 4) orientation = 0;
+      byte offset = block*4+orientation;
+      if(x < minX[offset]) x = minX[offset];
+      else if(x > maxX[offset]) x = maxX[offset];
       blitSprite();
     }
   }
