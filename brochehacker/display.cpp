@@ -1,6 +1,6 @@
 #include "display.h"
 
-byte state = ST_TETRIS;
+byte state = ST_GLIDER;
 byte screen[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 byte translatePin(byte original) {

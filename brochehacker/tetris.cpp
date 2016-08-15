@@ -5,7 +5,8 @@ static byte board[HEIGHT] = {0,0,0,0,0,0,0,0,0,0,0,0};
 static byte sprite[HEIGHT] = {0,0,0,0,0,0,0,0,0,0,0,0};
 
 const byte MIDDLE = 2;
-byte fallCycles = 50;
+const byte cycleForgiveness = 10;
+byte cycleFall = 50;
 boolean initTetris = true;
 
 byte cycle;
@@ -126,7 +127,7 @@ void newBlock() {
     clearLine(i);
   }
 
-  block = random(6);
+  block = random(7);
   orientation = 0;
   x = MIDDLE;
   y = 0;
@@ -143,6 +144,11 @@ void runTetris() {
   // init variables - new game
   if(initTetris) {
     randomSeed(millis());
+    byte randomTrash;
+    randomTrash = random(7);
+    randomTrash = random(7);
+    randomTrash = random(7);
+    randomTrash = random(7);
     initTetris = false;
     cycle = 0;
     clearBoard();
@@ -154,11 +160,14 @@ void runTetris() {
     if(checkLeft()) {
       x--;
       blitSprite();
+      // if it's about to hit, increase drop time a little
+      if(cycle >= cycleForgiveness && checkBottomCollision()) cycle-=cycleForgiveness;
     }
   } else if(btn & BUTTON_2) { // move right
     if(checkRight()) {
       x++;
       blitSprite();
+      if(cycle >= cycleForgiveness && checkBottomCollision()) cycle-=cycleForgiveness;
     }
   } else if(btn & BUTTON_4) { // rotate
     if(checkRotation()) {
@@ -168,11 +177,12 @@ void runTetris() {
       if(x < minX[offset]) x = minX[offset];
       else if(x > maxX[offset]) x = maxX[offset];
       blitSprite();
+      if(cycle >= cycleForgiveness && checkBottomCollision()) cycle-=cycleForgiveness;
     }
   }
 
   cycle++;
-  if(cycle >= fallCycles) {
+  if(cycle >= cycleFall) {
     cycle = 0;
     if(checkBottomCollision()) {
       newBlock();
