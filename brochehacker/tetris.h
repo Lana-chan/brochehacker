@@ -69,8 +69,9 @@ const byte blocks[] = {
   0b00000000
 };
 
-boolean checkCollision();
-boolean checkCollision(char offset);
+boolean checkSidewaysCollision();
+boolean checkSidewaysCollision(char offset);
+boolean checkBottomCollision();
 void blitScreen();
 void blitSprite();
 void startTetris();
