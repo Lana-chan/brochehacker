@@ -78,7 +78,7 @@ boolean checkBottomCollision() {
   //if(sprite[10] & 0b11111111) return true;
   char _y;
   for(byte i = 0; i < 4; i++) {
-    _y = i+y-1;
+    _y = i+y;
     if(_y > 0 && sprite[_y] & board[_y+1]) return true;
   }
   return false;
@@ -99,10 +99,18 @@ boolean checkRotation() {
 
 // ---
 
+// clear a line
 void clearLine(byte row) {
   for(byte i = row; i > 0; i--)
     board[i] = board[i-1];
   board[0] = 0;
+}
+
+// clear the board
+void clearBoard() {
+  memset(sprite,0,HEIGHT);
+  memset(board,0,HEIGHT);
+  board[HEIGHT-1] = 0b11111111;
 }
 
 // commit block to board and spawn a new block
@@ -122,13 +130,9 @@ void newBlock() {
   blitSprite();
   if(checkSidewaysCollision()) {
     // game over
+    initTetris = true;
+    state = ST_GLIDER;
   }
-}
-
-// clear the board
-void clearBoard() {
-  memset(board,0,HEIGHT);
-  board[HEIGHT-1] = 0b11111111;
 }
 
 // loop function for tetris
@@ -137,8 +141,8 @@ void runTetris() {
   if(initTetris) {
     initTetris = false;
     cycle = 0;
-    newBlock();
     clearBoard();
+    newBlock();
   }
   
   byte btn = buttonState();
