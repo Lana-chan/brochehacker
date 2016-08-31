@@ -11,7 +11,7 @@
 #include "tetris.h"
 
 void setup() {
-  Timer1.initialize(200);
+  Timer1.initialize(300);
   for (int i = 0; i < 16; i++)
     pinMode(pins[i], OUTPUT);
   for (int i = 0; i < 4; i++)
