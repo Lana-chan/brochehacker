@@ -7,3 +7,6 @@
 [submodule "board/libs/aleksmk-libs"]
 	path = board/libs/aleksmk-libs
 	url = git@github.com:aleksmk/kicad-libs.git
+[submodule "board\\modules\\safety_pin.pretty"]
+	path = board\\modules\\safety_pin.pretty
+	url = git@github.com:aylons/safety_pin.pretty
