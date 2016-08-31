@@ -22,6 +22,7 @@ void runGlider() {
   } else if(btn & BUTTON_2) {
     animCycles+=10;
   } else if(btn & BUTTON_4) {
-    state = ST_TETRIS;
+    //state = ST_TETRIS;
+    state = ST_TEXT;
   }
 }

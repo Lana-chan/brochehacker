@@ -32,8 +32,8 @@ void doubleBuffer() {
   static byte screenRow = 0;
   static byte screenCol = 0;
   // reset the previous iteration
-  digitalWrite(translatePin(rows[screenRow]), CATHIGH); // set previous off
-  digitalWrite(translatePin(cols[screenCol]), CATLOW);  // set previous off
+  digitalWrite(translatePin(rows[screenRow]), LOW); // set previous off
+  digitalWrite(translatePin(cols[screenCol]), HIGH);  // set previous off
   // go to the next iteration...
   // go to the next screenCol, wrap if necessary
   screenCol++;
@@ -48,10 +48,10 @@ void doubleBuffer() {
   // set this iteration
   //if((screen[screenRow]<<8-screenCol)&B1 == B1) {
   if(screen[screenRow] & (B10000000 >> screenCol)) {
-    digitalWrite(translatePin(rows[screenRow]), CATLOW);  // set this on
-    digitalWrite(translatePin(cols[screenCol]), CATHIGH); // set this on
+    digitalWrite(translatePin(rows[screenRow]), HIGH);  // set this on
+    digitalWrite(translatePin(cols[screenCol]), LOW); // set this on
   } else {
-    digitalWrite(translatePin(rows[screenRow]), CATHIGH); // set this off
-    digitalWrite(translatePin(cols[screenCol]), CATLOW);  // set this off
+    digitalWrite(translatePin(rows[screenRow]), LOW); // set this off
+    digitalWrite(translatePin(cols[screenCol]), HIGH);  // set this off
   }
 }

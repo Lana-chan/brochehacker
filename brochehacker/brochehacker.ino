@@ -9,6 +9,7 @@
 #include "display.h"
 #include "glider.h"
 #include "tetris.h"
+#include "text.h"
 
 void setup() {
   Timer1.initialize(200);
@@ -23,5 +24,6 @@ void setup() {
 void loop() {
   if(state == ST_GLIDER) runGlider();
   else if(state == ST_TETRIS) runTetris();
+  else if(state == ST_TEXT) runText();
   delay(DELAY);
 }
