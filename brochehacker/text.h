@@ -98,7 +98,9 @@ const unsigned char charset[] PROGMEM = {
   0x00, 0x00, 0x00, 0x00
 };
 
-const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÁÂÃÀÉÊÍÓÔÕÚÇáâãàéêíóôõúç0123456789.,!?@#$% ";
+//const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÁÂÃÀÉÊÍÓÔÕÚÇáâãàéêíóôõúç0123456789.,!?@#$% ";
+//const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz    É      Çáâ àéêíóô úç0123456789.,!?@#$% ";
+const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz                        0123456789.,!?@#$% ";
 
 void initializeText();
 void runText();

@@ -2,12 +2,12 @@
 #include "display.h"
 
 boolean textInit = true;
-char msg[] = "This is a test text this is another test text! ";
+char msg[] = "Primeiramente, FORA TEMER!   ";
 
 byte textX;           // x position scrolling
 byte textPos;         // message character position
 byte textCycle;       // cycle count
-byte textDelay = 8;  // number of cycles between frames
+byte textDelay = 5;  // number of cycles between frames
 char lookup[256];     // lookup table
 
 void initializeText() {
@@ -30,11 +30,12 @@ void runText() {
 
   textCycle++;
   if(textCycle >= textDelay) {
+    int offset = lookup[msg[textPos]]*8;
     for(byte i = 0; i < 8; i++) {
       // for each line in screen, scroll it left
       screen[i] <<= 1;
       // fill rightmost column with next next letter
-      screen[i] |= (pgm_read_byte_near(charset + lookup[msg[textPos]]*8 + i) >> 7-textX) & 0x01;
+      screen[i] |= (pgm_read_byte_near(charset + offset + i) >> 7-textX) & 0x01;
     }
     textX++;
     if(textX >= 6) {
