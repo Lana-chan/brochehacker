@@ -2,7 +2,7 @@
 #include "display.h"
 
 boolean textInit = true;
-char msg[] = "Primeiramente, FORA TEMER!   ";
+char msg[] = "Primeiramente, FORA TEMER!  Vote Pedro Markun 18007  ";
 
 byte textX;           // x position scrolling
 byte textPos;         // message character position
@@ -44,6 +44,12 @@ void runText() {
       if(msg[textPos] == 0) textPos = 0;
     }
     textCycle = 0;
+  }
+
+  byte btn = buttonState();
+  if(btn & BUTTON_4) {
+    textInit = true;
+    state = ST_GLIDER;
   }
 }
 
