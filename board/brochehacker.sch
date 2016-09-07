@@ -151,15 +151,15 @@ GND
 $Comp
 L R R1
 U 1 1 57A24E82
-P 7450 2750
-F 0 "R1" V 7530 2750 50  0000 C CNN
-F 1 "10k" V 7450 2750 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 7380 2750 50  0001 C CNN
-F 3 "" H 7450 2750 50  0000 C CNN
-	1    7450 2750
+P 6850 2750
+F 0 "R1" V 6930 2750 50  0000 C CNN
+F 1 "10k" V 6850 2750 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" V 6780 2750 50  0001 C CNN
+F 3 "" H 6850 2750 50  0000 C CNN
+	1    6850 2750
 	0    1    1    0   
 $EndComp
-Text GLabel 7600 2750 2    60   Input ~ 0
+Text GLabel 7000 2750 2    60   Input ~ 0
 VCC
 Text GLabel 3550 2000 0    60   Input ~ 0
 VCC
@@ -300,17 +300,6 @@ F 1 "CONN_01X03" V 7550 3150 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 7450 3150 50  0001 C CNN
 F 3 "" H 7450 3150 50  0000 C CNN
 	1    7450 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L JUMPER JP1
-U 1 1 57A92DDA
-P 7000 2750
-F 0 "JP1" H 7000 2900 50  0000 C CNN
-F 1 "JUMPER" H 7000 2670 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 7000 2750 50  0001 C CNN
-F 3 "" H 7000 2750 50  0000 C CNN
-	1    7000 2750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
