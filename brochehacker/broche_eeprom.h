@@ -9,8 +9,8 @@
  
 #include "Arduino.h"
 
+// storage for the 512b eeprom
 typedef struct AnimationStorage {
-  // storage for the 512b eeprom
   byte anim1Frames;    // number of frames in animation
   byte anim1Speed;     // speed of animation
   byte anim1Data[120]; // 120 / 8 = 15 frames of animation

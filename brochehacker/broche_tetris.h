@@ -69,7 +69,7 @@ const byte blocks[] = {
   0b00000000
 };
 
-const PROGMEM char minX[] = {
+const char minX[] = {
   -1,  0, -2,  0, // I
    0, -1,  0,  0, // T
   -1, -1, -1, -1, // []
@@ -79,7 +79,7 @@ const PROGMEM char minX[] = {
   -1,  0,  0,  0  // Z
 };
 
-const PROGMEM char maxX[] = {
+const char maxX[] = {
   6, 4, 5, 4, // I
   5, 5, 5, 6, // T
   5, 5, 5, 5, // []

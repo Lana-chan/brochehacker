@@ -38,6 +38,13 @@ void loopSerial() {
         Serial.readStringUntil(10).toCharArray(store->userMessage, 140);
         Serial.println("Text OK");
         break;
+      case 'A': // anim1
+        store->anim1Frames = Serial.read();
+        if(store->anim1Frames > 15) store->anim1Frames = 15;
+        store->anim1Speed = 255 - Serial.read(); // inverse so 1 is slowest
+        Serial.readBytes(store->anim1Data, store->anim1Frames * 8);
+        Serial.println("Anim1 OK");
+        break;
       case 'S': // save to eeprom
         saveEEPROM();
         Serial.println("Save OK");
