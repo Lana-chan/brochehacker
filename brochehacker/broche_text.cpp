@@ -30,7 +30,7 @@ void runText() {
 
   textCycle++;
   if(textCycle >= textDelay) {
-    int offset = lookup[store.userMessage[textPos]]*8;
+    int offset = lookup[store->userMessage[textPos]]*8;
     for(byte i = 0; i < 8; i++) {
       // for each line in screen, scroll it left
       screen[i] <<= 1;
@@ -41,7 +41,7 @@ void runText() {
     if(textX >= 6) {
       textX = 0;
       textPos++;
-      if(store.userMessage[textPos] == 0) textPos = 0;
+      if(store->userMessage[textPos] == 0) textPos = 0;
     }
     textCycle = 0;
   }

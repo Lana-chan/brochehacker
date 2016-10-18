@@ -9,13 +9,13 @@ void runGlider() {
   static byte cycleCount = 0;
   
   cycleCount++;
-  if(cycleCount >= store.anim1Speed) {
+  if(cycleCount >= store->anim1Speed) {
     cycleCount = 0;
     animFrame++;
-    if(animFrame >= store.anim1Frames) animFrame = 0;
+    if(animFrame >= store->anim1Frames) animFrame = 0;
     // drawFrame(&anim[animFrame*8]);
     for(byte i = 0; i < 8; i++)
-      screen[i] = store.anim1Data[animFrame*8+i];
+      screen[i] = store->anim1Data[animFrame*8+i];
   }
   byte btn = buttonState();
   if(btn & BUTTON_1) {

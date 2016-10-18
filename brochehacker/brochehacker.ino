@@ -11,9 +11,7 @@
 #include "broche_tetris.h"
 #include "broche_text.h"
 
-void setup() {
-  loadEEPROM();
-  
+void setup() {  
   Timer1.initialize(200);
   for (int i = 0; i < 16; i++)
     pinMode(pins[i], OUTPUT);

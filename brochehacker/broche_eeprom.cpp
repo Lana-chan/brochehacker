@@ -5,6 +5,7 @@
 // - AnimationStorage must be stored in 512byte EEPROM
 // - serial interface for replacing animations and text from external device
 
+AnimationStorage *store = (AnimationStorage *) malloc(sizeof(AnimationStorage)); 
 
 void saveEEPROM() {
   // save AnimationStorage into eeprom
