@@ -28,5 +28,7 @@ extern AnimationStorage* store;
 
 void loadEEPROM();
 void saveEEPROM();
+void setupSerial();
+void loopSerial();
 
 #endif // EEPROM_H_
