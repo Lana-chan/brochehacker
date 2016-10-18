@@ -1,3 +1,7 @@
+/*
+ * Code taken and adapted from BlushingBoy.net
+ */
+
 #include "display.h"
 
 byte state = ST_GLIDER;

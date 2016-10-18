@@ -1,8 +1,7 @@
 /*
  * Broche Hacker Firmware
- * by Lana-chan
- *
- * LED driver code (c) 2009 BlushingBoy.net
+ * Licensed under GPLv3
+ * http://mynameiser.in/
  */
 
 #include "TimerOne.h"

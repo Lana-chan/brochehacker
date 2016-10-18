@@ -9,6 +9,7 @@
 
 #include "Arduino.h"
 
+// "Tilt" font by Tony de Marco
 const unsigned char charset[] PROGMEM = {
   0x70, 0x88, 0x88, 0x88, 0xf8, 0x88, 0x88, 0x88, 0xf0, 0x88, 0x88, 0xf0,
   0x88, 0x88, 0x88, 0xf0, 0x70, 0x88, 0x88, 0x80, 0x80, 0x80, 0x88, 0x70,
@@ -98,6 +99,7 @@ const unsigned char charset[] PROGMEM = {
   0x00, 0x00, 0x00, 0x00
 };
 
+// ascii mapping
 //const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÁÂÃÀÉÊÍÓÔÕÚÇáâãàéêíóôõúç0123456789.,!?@#$% ";
 //const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz    É      Çáâ àéêíóô úç0123456789.,!?@#$% ";
 const char charmap[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz                        0123456789.,!?@#$% ";

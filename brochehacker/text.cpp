@@ -7,9 +7,10 @@ char msg[] = "Primeiramente, FORA TEMER!  Vote Pedro Markun 18007  ";
 byte textX;           // x position scrolling
 byte textPos;         // message character position
 byte textCycle;       // cycle count
-byte textDelay = 5;  // number of cycles between frames
+byte textDelay = 5;   // number of cycles between frames
 char lookup[256];     // lookup table
 
+// make reverse LUT from charmap in header
 void initializeText() {
   int i;
   for (i = 0; i < 256; i++)
