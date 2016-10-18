@@ -1,6 +1,9 @@
 #include "broche_glider.h"
 #include "broche_display.h"
 
+// glider is the animation code for the badge
+// named for its original animation code which presented a game of life glider
+
 // hacker anim loop
 void runGlider() {
   static byte animCycles = 50;

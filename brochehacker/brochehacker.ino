@@ -5,11 +5,11 @@
  */
 
 #include "TimerOne.h"
+#include "broche_eeprom.h"
 #include "broche_display.h"
 #include "broche_glider.h"
 #include "broche_tetris.h"
 #include "broche_text.h"
-#include "broche_eeprom.h"
 
 void setup() {
   Timer1.initialize(200);
