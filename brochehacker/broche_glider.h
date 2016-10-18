@@ -7,7 +7,7 @@
  * glider animation
  */
 
-#include "display.h"
+#include "broche_display.h"
 
 const byte FRAMES = 4;
 const byte anim[] = {

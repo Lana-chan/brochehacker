@@ -1,5 +1,5 @@
-#include "glider.h"
-#include "display.h"
+#include "broche_glider.h"
+#include "broche_display.h"
 
 // hacker anim loop
 void runGlider() {

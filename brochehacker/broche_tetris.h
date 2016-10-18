@@ -2,7 +2,7 @@
 #ifndef TETRIS_H_   /* Include guard */
 #define TETRIS_H_
 
-#include "display.h"
+#include "broche_display.h"
 
 const byte blocks[] = {
   0b01000100, // |

@@ -1,5 +1,5 @@
-#include "text.h"
-#include "display.h"
+#include "broche_text.h"
+#include "broche_display.h"
 
 boolean textInit = true;
 char msg[] = "Primeiramente, FORA TEMER!  Vote Pedro Markun 18007  ";
