@@ -22,6 +22,11 @@ struct AnimationStorage {
   char userMessage[140]; // 140 characters of text. it's a tweet, folks
   
   // 122 + 122 + 140 = 384 bytes !
-}
+};
+
+extern AnimationStorage store;
+
+void loadEEPROM();
+void saveEEPROM();
 
 #endif // EEPROM_H_
