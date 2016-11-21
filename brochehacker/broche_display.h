@@ -10,6 +10,14 @@
  
 #include "Arduino.h"
 
+// matriz de cátodo comum
+//#define CATHIGH HIGH
+//#define CATLOW LOW
+
+// matriz de ânodo comum
+#define CATHIGH LOW
+#define CATLOW HIGH
+
 const byte DELAY = 10;
 const byte ST_GLIDER = 0;
 const byte ST_TETRIS = 1;

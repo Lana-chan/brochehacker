@@ -12,6 +12,9 @@
 #include "broche_text.h"
 
 void setup() {
+  // load storage from eeprom at startup
+  loadEEPROM();
+  
   if(digitalRead(button[0]) == LOW) {    // badge turned on with button 1
     delay(500);
     if(digitalRead(button[0]) == LOW) {  // button 1 stayed on for 500ms
@@ -27,9 +30,6 @@ void setup() {
   for (int i = 0; i < 4; i++)
     pinMode(button[i], INPUT_PULLUP);
   Timer1.attachInterrupt(doubleBuffer);
-  
-  // load storage from eeprom at startup
-  loadEEPROM();
 }
 
 // main loop

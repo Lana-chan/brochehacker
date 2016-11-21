@@ -1,4 +1,5 @@
 #include "broche_eeprom.h"
+#include "broche_display.h"
 #include <EEPROM.h>
 
 // todo:
@@ -19,6 +20,13 @@ void loadEEPROM() {
 
 // serial init
 void setupSerial() {
+  pinMode(translatePin(rows[4]), OUTPUT);
+  pinMode(translatePin(cols[4]), OUTPUT);
+  digitalWrite(translatePin(rows[4]), CATLOW); // 4,4 on
+  digitalWrite(translatePin(cols[4]), CATHIGH);
+  delay(500);
+  digitalWrite(translatePin(cols[4]), CATLOW);
+  
   Serial.begin(9600);
 }
 
