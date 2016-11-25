@@ -47,10 +47,16 @@ void loopSerial() {
         Serial.println("Text OK");
         break;
       case 'A': // anim1
+        while(Serial.available() < 1) {}
         store->anim1Frames = Serial.read();
         if(store->anim1Frames > 15) store->anim1Frames = 15;
-        store->anim1Speed = 255 - Serial.read(); // inverse so 1 is slowest
+        while(Serial.available() < 1) {}
+        store->anim1Speed = Serial.read();
         Serial.readBytes(store->anim1Data, store->anim1Frames * 8);
+        store->anim1Speed = 255 - store->anim1Speed; // inverse so 1 is slowest
+        Serial.print(store->anim1Frames);
+        Serial.print(" ");
+        Serial.println(store->anim1Speed);
         Serial.println("Anim1 OK");
         break;
       case 'S': // save to eeprom
