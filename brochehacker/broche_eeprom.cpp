@@ -63,6 +63,15 @@ void loopSerial() {
         saveEEPROM();
         Serial.println("Save OK");
         break;
+      case 'D': // dump eeprom
+        Serial.print("D");
+        Serial.write(store->anim1Frames);
+        Serial.write(store->anim1Speed);
+        Serial.write((byte)strlen(store->userMessage));
+        Serial.write(store->anim1Data, store->anim1Frames * 8);
+        Serial.write(store->userMessage);
+        Serial.print("\r\n");
+        break;
       case 'Q': // quit serial mode
         serialMode = 0;
         Serial.println("Quit OK");
