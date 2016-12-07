@@ -14,7 +14,8 @@
 void setup() {
   // load storage from eeprom at startup
   loadEEPROM();
-  
+
+  pinMode(button[0], INPUT_PULLUP);
   if(digitalRead(button[0]) == LOW) {    // badge turned on with button 1
     delay(500);
     if(digitalRead(button[0]) == LOW) {  // button 1 stayed on for 500ms
