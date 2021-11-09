@@ -3,4 +3,4 @@ Design de um broche animado com LEDs
 
 Design files for a LED pin badge
 
-[video](https://computerfairi.es/media/kGKKyw6zWL-g-hvXnis)
+[See it in action](https://img.maple.pet/i/3e0.mp4)!
